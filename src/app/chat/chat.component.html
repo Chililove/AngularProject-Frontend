@@ -1,0 +1,13 @@
+<p>chat works!</p>
+
+<label>
+  Message:
+  <input type="text" [formControl]="message">
+</label>
+
+<button (click)="sendMessage()">Sent Message</button>
+
+
+<h4 *ngFor="let message of messages">
+  {{message}}
+</h4>
