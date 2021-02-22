@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {ReactiveFormsModule} from '@angular/forms';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
@@ -14,8 +15,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
