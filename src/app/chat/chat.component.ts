@@ -62,11 +62,13 @@ export class ChatComponent implements OnInit, OnDestroy {
     if (this.chatService.chatClient) {
       this.chatService.sendNickName(this.chatService.chatClient.nickname);
     }
+    // this.chatService.connect();
   }
 
   ngOnDestroy(): void {
     this.unsubscribe$.next();
     this.unsubscribe$.complete();
+    this.chatService.disconnect();
   }
 
   sendMessage(): void {

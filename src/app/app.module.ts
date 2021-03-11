@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -16,7 +17,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     BrowserModule,
     AppRoutingModule,
     SocketIoModule.forRoot(config),
-    NgbModule
+    NgbModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
