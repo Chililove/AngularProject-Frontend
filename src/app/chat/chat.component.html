@@ -8,10 +8,13 @@
   <span>
     users typing:
   </span>
-    <span *ngFor="let client of clientsTyping; let i = index" id="UserTyping">
-    {{client.nickname}}<span *ngIf="clientsTyping.length - 1 > i">,</span>
+    <span *ngFor="let client of clientsTyping;
+            let i = index" id="UserTyping">
+    {{client.nickname}}
+      <span *ngIf="clientsTyping.length - 1 > i">, </span>
   </span>
   </div>
+
   <label>
     Message:
     <input type="text" [formControl]="messageFC">
