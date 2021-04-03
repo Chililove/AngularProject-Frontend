@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {Socket, SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SharedModule} from './shared/shared.module';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
 
 
 @Injectable()
@@ -34,7 +36,9 @@ export class SocketStock extends Socket {
     BrowserModule,
     AppRoutingModule,
     SocketIoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule,
+    MatFormFieldModule
   ],
   providers: [SocketChat, SocketStock],
   bootstrap: [AppComponent]

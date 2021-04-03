@@ -4,6 +4,7 @@
   <h4 *ngFor="let chatMessage of messages" id="chatmessages">
     {{chatMessage.sender.nickname}} -- {{chatMessage.message}}
   </h4>
+
   <div *ngIf="clientsTyping.length > 0 && chatClient">
   <span>
     users typing:
@@ -24,13 +25,26 @@
 
 
 </div>
-<div *ngIf="!chatClient">
-  <label id="NicknameBox">
-    Enter Nickname:
-    <input type="text" [formControl]="nickNameFc" >
-  </label>
-  <button (click)="sendNickName()" mat-raised-button color="accent">Send</button>
+
+<div fxLayout="row" fxFlex fxLayoutAlign="center center" *ngIf="!chatClient">
+  <mat-card fxFlex="32">
+  <mat-card-header fxLayoutAlign="center top">
+    <mat-card-title>
+      Welcome Stranger
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field class="example-form-field" fxFlex>
+      <mat-label>Enter Nickname</mat-label>
+      <input matInput type="text" [formControl]="nickNameFc">
+      <button mat-button  matSuffix mat-icon-button aria-label="Clear" (click)="sendNickName()" >
+        <mat-icon fontSet="material-icons-outlined">send</mat-icon>
+      </button>
+    </mat-form-field>
+  </mat-card-content>
+</mat-card>
 </div>
+
 <div *ngIf="error$ | async as error" class="alert alert-danger">
   {{error}}
 </div>
