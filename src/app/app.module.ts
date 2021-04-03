@@ -4,10 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {Socket, SocketIoConfig, SocketIoModule} from 'ngx-socket-io';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {ReactiveFormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {SharedModule} from './shared/shared.module';
+import {MatFormField, MatFormFieldModule} from '@angular/material/form-field';
+
 
 @Injectable()
 export class SocketChat extends Socket {
@@ -36,10 +36,9 @@ export class SocketStock extends Socket {
     BrowserModule,
     AppRoutingModule,
     SocketIoModule,
-    NgbModule,
-    MatToolbarModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule
+    SharedModule,
+    MatFormFieldModule
   ],
   providers: [SocketChat, SocketStock],
   bootstrap: [AppComponent]
