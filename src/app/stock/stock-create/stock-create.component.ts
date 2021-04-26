@@ -40,4 +40,8 @@ export class StockCreateComponent implements OnInit {
     const stockDto: CreateStockDto = this.stockForm.value;
     this.stockService.create(stockDto);
   }
+
+  getStocks(): void {
+    this.stockService.getAllStocks();
+  }
 }

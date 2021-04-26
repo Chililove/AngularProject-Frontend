@@ -21,4 +21,7 @@ export class StockService {
   listenForCreateError(): Observable<string> {
     return this.socketStocks.fromEvent<string>('stock-created-error');
   }
+  getAllStocks(): Observable<StockDto[]> {
+    return this.socketStocks.emit('stock');
+  }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {StockService} from './shared/stock.service';
+import {Subject} from 'rxjs';
+import {StockDto} from './shared/stock.dto';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-stock',
@@ -7,7 +11,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StockComponent implements OnInit {
 
-  constructor() { }
+  stockFC = new FormControl('');
+  public stockD: StockDto | undefined;
+  allStocks: StockDto[] = [];
+  unsubscribe$ = new Subject();
+  selected = '';
+
+  constructor(private stockService: StockService) { }
 
   ngOnInit(): void {
   }

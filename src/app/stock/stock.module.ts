@@ -5,6 +5,8 @@ import { StockRoutingModule } from './stock-routing.module';
 import { StockComponent } from './stock.component';
 import { StockCreateComponent } from './stock-create/stock-create.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -12,7 +14,9 @@ import {ReactiveFormsModule} from '@angular/forms';
   imports: [
     CommonModule,
     StockRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule
   ]
 })
 export class StockModule { }
